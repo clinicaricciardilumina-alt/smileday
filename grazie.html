@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prenotazione confermata – Ricciardi Studio Dentistico</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --blue:       #419cc9;
+  --blue-light: #a2d7ea;
+  --blue-pale:  #e8f5fb;
+  --dark:       #0d1117;
+  --white:      #ffffff;
+  --mid:        #5a7a8a;
+  --accent:     #2d7aab;
+  --text:       #1a2530;
+  --green:      #27ae60;
+  --red:        #e74c3c;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--dark); color: var(--text); overflow-x: hidden; }
+h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+img { display: block; max-width: 100%; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  font-family: 'DM Sans', sans-serif; font-weight: 500;
+  font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase;
+  text-decoration: none; border: none; cursor: pointer;
+  padding: 1rem 2.4rem; transition: background .2s, transform .15s;
+}
+.btn--primary { background: var(--blue); color: #fff; }
+.btn--primary:hover { background: var(--accent); transform: translateY(-2px); }
+
+/* SUCCESS PAGE */
+.success-page {
+  min-height: 100vh; background: var(--dark);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 4rem 2rem;
+}
+.success-page__check {
+  width: 80px; height: 80px; border-radius: 50%; background: var(--blue);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1.5rem; font-size: 2rem; color: #fff;
+  animation: pop .5s ease;
+}
+@keyframes pop { 0% { transform: scale(0); } 70% { transform: scale(1.12); } 100% { transform: scale(1); } }
+.success-page h2 { font-size: clamp(2rem,5vw,3rem); color: #fff; font-weight: 700; margin-bottom: 1rem; }
+.success-page h2 em { font-style: italic; color: var(--blue-light); }
+.success-page > p { color: rgba(255,255,255,0.88); font-size: 1rem; line-height: 1.85; max-width: 480px; font-weight: 300; margin: 0 auto; }
+.success-page > p strong { color: #fff; }
+.success-page__details {
+  margin-top: 2rem; background: rgba(65,156,201,0.07); border: 1px solid rgba(65,156,201,0.18);
+  padding: 1.3rem 2rem; font-size: 0.9rem; color: rgba(255,255,255,0.88);
+  text-align: left; max-width: 420px; width: 100%;
+  display: flex; flex-direction: column; gap: 0.6rem;
+}
+.success-page__details .row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+.success-page__details .row span { color: rgba(255,255,255,0.6); font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase; }
+.success-page__details strong { color: #fff; font-weight: 600; }
+.success-page__cta { margin-top: 2.5rem; }
+.success-page__note { margin-top: 1.5rem; font-size: 0.78rem; color: rgba(255,255,255,0.4); }
+.logo-top { height: 70px; width: auto; margin-bottom: 2.5rem; filter: brightness(0) invert(1); }
+</style>
+</head>
+<body>
+
+<div class="success-page" id="page-success">
+  <img class="logo-top" src="assets/logo.png" alt="Ricciardi Studio Dentistico" onerror="this.style.display='none'">
+  <div class="success-page__check">&#10003;</div>
+  <h2>Prenotazione <em>confermata.</em></h2>
+  <p>Grazie, abbiamo ricevuto la tua richiesta per la visita <strong>Total Smile</strong>.<br>
+     La nostra segreteria ti ricorder&agrave; l'appuntamento prima della visita.</p>
+
+  <div class="success-page__details" id="success-details">
+    <div class="row"><span>Caricamento&hellip;</span></div>
+  </div>
+
+  <div class="success-page__cta">
+    <a href="index.html" class="btn btn--primary">Torna alla home</a>
+  </div>
+  <p class="success-page__note">Riceverai conferma anche via email.</p>
+</div>
+
+<script type="module">
+/* grazie.html — Conferma prenotazione.
+   Legge i parametri dall'URL di ritorno da Stripe, aggiorna lo stato
+   del lead a "paid" su Firestore (fallback localStorage) e mostra il riepilogo. */
+
+const firebaseConfig = {
+  apiKey:            "AIzaSyCVC6fHbo8OHevILIkI9j_XDyP4GoWCHAQ",
+  authDomain:        "landing-total-stripe.firebaseapp.com",
+  projectId:         "landing-total-stripe",
+  storageBucket:     "landing-total-stripe.firebasestorage.app",
+  messagingSenderId: "528151902496",
+  appId:             "1:528151902496:web:9da1394fe42a30a36dff45"
+};
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getFirestore, collection, doc, addDoc, updateDoc }
+  from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+const _app = initializeApp(firebaseConfig);
+const db   = getFirestore(_app);
+
+function formatDay(dateStr) {
+  if (!dateStr) return '—';
+  try {
+    const d = new Date(dateStr + 'T12:00:00');
+    const f = d.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+    return f.charAt(0).toUpperCase() + f.slice(1);
+  } catch(e) { return dateStr; }
+}
+
+async function markPaid(leadId, amount) {
+  const updateData = {
+    payment:  'paid',
+    amount:   amount || 2000,
+    leadOnly: false,
+    paidAt:   new Date().toISOString()
+  };
+
+  let pending = {};
+  try { pending = JSON.parse(localStorage.getItem('tl_pending_booking') || '{}'); } catch(e) {}
+
+  if (leadId) {
+    try {
+      await updateDoc(doc(db, 'bookings', leadId), updateData);
+      return leadId;
+    } catch(e) { console.warn('Firestore updateDoc fallback:', e.message); }
+  }
+
+  const p = new URLSearchParams(window.location.search);
+  const newBooking = {
+    nome:    p.get('nome')    || pending.nome    || '',
+    cognome: p.get('cognome') || pending.cognome || '',
+    email:   p.get('email')   || pending.email   || '',
+    tel:     pending.tel  || '',
+    note:    pending.note || '',
+    data:    p.get('data') || pending.data || '',
+    ora:     p.get('ora')  || pending.ora  || '',
+    ...updateData,
+    promemoria: 'no',
+    campagna:   'allineatori',
+    createdAt:  new Date().toISOString()
+  };
+  try {
+    const ref = await addDoc(collection(db, 'bookings'), newBooking);
+    return ref.id;
+  } catch(e) {
+    console.warn('Firestore addDoc fallback localStorage:', e.message);
+    const bks = JSON.parse(localStorage.getItem('tl_bookings') || '[]');
+    if (leadId) {
+      const i = bks.findIndex(b => b.id === leadId);
+      if (i > -1) bks[i] = { ...bks[i], ...updateData };
+      else bks.push({ id: leadId, ...newBooking });
+    } else {
+      newBooking.id = 'local_' + Date.now();
+      bks.push(newBooking);
+    }
+    localStorage.setItem('tl_bookings', JSON.stringify(bks));
+    return leadId || newBooking.id;
+  }
+}
+
+function renderDetails({ nome, cognome, data, ora, amount }) {
+  const oraDisp = ora ? ora.replace('-', ' – ') : '—';
+  const acc = amount ? (amount / 100).toFixed(0) : '20';
+  document.getElementById('success-details').innerHTML =
+    '<div class="row"><span>Paziente</span><strong>' + ((nome||'') + ' ' + (cognome||'')) + '</strong></div>' +
+    '<div class="row"><span>Data</span><strong>' + formatDay(data) + '</strong></div>' +
+    (ora ? '<div class="row"><span>Orario</span><strong>' + oraDisp + '</strong></div>' : '') +
+    '<div class="row"><span>Acconto pagato</span><strong>€ ' + acc + '</strong></div>' +
+    '<div class="row"><span>Saldo in studio</span><strong>€ 67</strong></div>';
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+  const p = new URLSearchParams(window.location.search);
+
+  let pending = {};
+  try { pending = JSON.parse(localStorage.getItem('tl_pending_booking') || '{}'); } catch(e) {}
+
+  const leadId = p.get('lead_id') || pending.leadId || '';
+  const amount = parseInt(p.get('amount')) || 2000;
+
+  const details = {
+    nome:    p.get('nome')    || pending.nome    || '',
+    cognome: p.get('cognome') || pending.cognome || '',
+    data:    p.get('data')    || pending.data    || '',
+    ora:     p.get('ora')     || pending.ora     || '',
+    amount
+  };
+
+  renderDetails(details);
+
+  try { await markPaid(leadId, amount); }
+  catch(e) { console.warn('markPaid error:', e.message); }
+
+  localStorage.removeItem('tl_pending_booking');
+
+  if (typeof fbq === 'function') fbq('track', 'Purchase', { value: amount / 100, currency: 'EUR' });
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event: 'Purchase', value: amount / 100, currency: 'EUR' });
+});
+</script>
+
+</body>
+</html>

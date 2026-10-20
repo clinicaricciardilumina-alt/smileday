@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NWW43PZP');</script>
+<!-- End Google Tag Manager -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Total Smile – Allineatori invisibili · Ricciardi Studio Dentistico</title>
+<meta name="description" content="Total Smile: denti allineati con gli allineatori trasparenti, quasi invisibili e rimovibili. Prenota la tua visita con scansione 3D per il Total Smile Day a Palagiano.">
+<style>
+/* ═══════════════════════════════════════════════
+   global.css — Variabili, reset, componenti base
+   Ricciardi Studio Dentistico · Total Smile
+═══════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── VARIABILI ── */
+:root {
+  --blue:       #419cc9;
+  --blue-light: #a2d7ea;
+  --blue-pale:  #e8f5fb;
+  --dark:       #0d1117;
+  --white:      #ffffff;
+  --mid:        #5a7a8a;
+  --accent:     #2d7aab;
+  --text:       #1a2530;
+  --green:      #27ae60;
+  --red:        #e74c3c;
+  --radius:     0px;
+}
+
+/* ── BASE ── */
+html   { scroll-behavior: smooth; }
+body   { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--text); overflow-x: hidden; }
+h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+a      { transition: color .2s; }
+img    { display: block; max-width: 100%; }
+
+/* ── TIPOGRAFIA UTILITY ── */
+.label {
+  font-size: 0.63rem; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--blue); margin-bottom: 0.8rem; display: block; font-weight: 500;
+}
+.label--light { color: var(--blue-light); }
+
+/* ── BOTTONI ── */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  font-family: 'DM Sans', sans-serif; font-weight: 500;
+  font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase;
+  text-decoration: none; border: none; cursor: pointer;
+  padding: 1rem 2.4rem;
+  transition: background .2s, transform .15s, border-color .2s, color .2s;
+}
+.btn--primary  { background: var(--blue); color: #fff; }
+.btn--primary:hover { background: var(--accent); transform: translateY(-2px); }
+.btn--ghost    { background: transparent; border: 1px solid rgba(255,255,255,0.38); color: rgba(255,255,255,0.85); }
+.btn--ghost:hover  { border-color: #fff; color: #fff; }
+.btn--dark     { background: var(--dark); color: #fff; }
+.btn--dark:hover   { background: var(--accent); }
+.btn--outline  { background: transparent; border: 1px solid rgba(65,156,201,0.3); color: var(--mid); }
+.btn--outline:hover { border-color: var(--blue); color: var(--blue); }
+.btn--danger   { background: transparent; border: 1px solid rgba(231,76,60,0.3); color: var(--red); }
+.btn--danger:hover  { border-color: var(--red); background: rgba(231,76,60,0.05); }
+.btn--sm       { padding: 0.42rem 0.9rem; font-size: 0.67rem; }
+.btn--full     { width: 100%; padding: 1.15rem; }
+
+/* ── NAV ── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0;
+  background: #ffffff;
+  border-bottom: none;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  height: 80px;
+}
+.nav__logo {
+  display: flex; align-items: center; text-decoration: none;
+  height: 100%;
+  padding: 0 2rem;
+}
+.nav__logo img {
+  height: 70px; width: auto; display: block;
+}
+
+/* ── FOOTER ── */
+.footer { background: #ffffff; padding: 3.5rem 2rem; text-align: center; border-top: 1px solid rgba(65,156,201,0.15); }
+.footer__logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--blue); margin-bottom: 0.4rem; }
+.footer__sub { font-size: 0.65rem; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(255,255,255,0.28); margin-bottom: 1.3rem; }
+.footer p   { font-size: 0.8rem; color: var(--mid); font-weight: 300; }
+.footer a   { color: var(--mid); text-decoration: none; margin: 0 0.5rem; }
+.footer a:hover { color: var(--blue); }
+.footer__divider { height: 1px; background: rgba(65,156,201,0.2); margin: 1.5rem auto; max-width: 260px; }
+
+
+/* ── BADGE ── */
+.badge { display: inline-block; font-size: 0.6rem; letter-spacing: 0.08em; padding: 0.22rem 0.65rem; text-transform: uppercase; font-weight: 600; }
+.badge--paid    { background: rgba(39,174,96,0.1);   color: #27ae60; }
+.badge--pending { background: rgba(162,215,234,0.18); color: var(--blue); }
+.badge--failed  { background: rgba(231,76,60,0.1);   color: var(--red); }
+.badge--yes     { background: rgba(39,174,96,0.1);   color: #27ae60; }
+.badge--no      { background: rgba(162,215,234,0.12); color: var(--mid); }
+
+/* ── FORM ── */
+.field { display: flex; flex-direction: column; gap: 0.38rem; }
+.field label { font-size: 0.63rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.48); font-weight: 500; }
+.field input, .field textarea, .field select {
+  padding: 0.88rem 1rem; font-size: 0.9rem; font-family: 'DM Sans', sans-serif;
+  color: #fff; background: rgba(255,255,255,0.05); border: 1px solid rgba(65,156,201,0.22);
+  outline: none; transition: border-color .2s, background .2s; width: 100%;
+}
+.field input::placeholder, .field textarea::placeholder { color: rgba(255,255,255,0.22); }
+.field input:focus, .field textarea:focus { border-color: var(--blue); background: rgba(65,156,201,0.08); }
+.field--light label  { color: var(--mid); }
+.field--light input, .field--light textarea, .field--light select { background: #f8fbfd; color: var(--text); border-color: rgba(65,156,201,0.22); }
+.field--light input::placeholder { color: rgba(26,37,48,0.3); }
+.field--light input:focus, .field--light textarea:focus { border-color: var(--blue); background: #fff; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.privacy-row { display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer; }
+.privacy-row input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--blue); flex-shrink: 0; margin-top: 3px; }
+.privacy-row span { font-size: 0.8rem; color: rgba(255,255,255,0.52); line-height: 1.6; }
+.privacy-row a { color: var(--blue-light); }
+.err { color: #ff6b6b; font-size: 0.78rem; margin-top: 0.3rem; }
+
+/* ── UTILITY ── */
+.hidden { display: none !important; }
+.text-center { text-align: center; }
+.mt-1 { margin-top: 0.8rem; }  .mt-2 { margin-top: 1.5rem; }
+.mb-1 { margin-bottom: 0.8rem; } .mb-2 { margin-bottom: 1.5rem; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) { .grid-2 { grid-template-columns: 1fr; } }
+@media (max-width: 768px) { .nav { padding: 0.9rem 1.5rem; } }
+
+/* Nav button alignment */
+.nav .btn { margin-right: 2rem; }
+
+/* ═══════════════════════════════════════════════
+   landing.css — Stili specifici della landing page
+   Ricciardi Studio Dentistico · Total Smile
+═══════════════════════════════════════════════ */
+
+/* ── HERO ── */
+.hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; }
+.hero__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.hero__overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,18,28,0.90) 45%, rgba(10,18,28,0.22) 100%); }
+.hero__content { position: relative; z-index: 2; padding: 5rem 4rem 5rem; max-width: 700px; }
+.hero__tag { display: inline-block; background: var(--blue); color: #fff; font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; padding: 0.35rem 1rem; margin-bottom: 1.5rem; font-weight: 500; }
+.hero__title { font-size: clamp(3.8rem, 10vw, 8rem); font-weight: 700; color: #fff; line-height: 1; margin-bottom: 1.5rem; letter-spacing: -0.02em; white-space: nowrap; }
+.hero__title em { font-style: italic; color: var(--blue-light); }
+.hero__sub { font-size: 1.05rem; color: rgba(255,255,255,0.7); line-height: 1.8; max-width: 440px; margin-bottom: 0.8rem; font-weight: 300; }
+.hero__date { font-size: 0.75rem; color: var(--blue-light); letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; margin-bottom: 2.2rem; }
+.hero__ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero__badges { display: flex; gap: 1.8rem; margin-top: 3rem; flex-wrap: wrap; }
+.hero__badge { display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.55); font-size: 0.8rem; }
+.hero__badge::before { content: '✓'; color: var(--blue-light); font-weight: 700; }
+
+/* ── STRIP ── */
+.strip { background: var(--blue); padding: 1.1rem 2rem; display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+.strip__item { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: #fff; font-weight: 500; }
+.strip__dot  { width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,0.35); flex-shrink: 0; }
+
+/* ── INTRO ── */
+.intro { display: grid; grid-template-columns: 1fr 1fr; min-height: 580px; }
+.intro__text { background: var(--dark); padding: 5rem 4.5rem; display: flex; flex-direction: column; justify-content: center; }
+.intro__text h2 { font-size: clamp(2rem, 3.5vw, 2.9rem); font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 1.5rem; }
+.intro__text h2 em { font-style: italic; color: var(--blue); }
+.intro__text p { font-size: 1.05rem; color: rgba(255,255,255,0.90); line-height: 1.85; font-weight: 300; margin-bottom: 1rem; }
+.intro__bullets { list-style: none; margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem; }
+.intro__bullets li { display: flex; align-items: center; gap: 0.8rem; font-size: 0.95rem; color: #ffffff; font-weight: 500; }
+.intro__bullets li::before { content: '✓'; width: auto; background: none; color: var(--blue-light); font-weight: 700; font-size: 1rem; flex-shrink: 0; }
+.intro__img { position: relative; overflow: hidden; }
+.intro__img img { width: 100%; height: 100%; object-fit: cover; }
+.intro__img-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(13,17,23,0.45) 0%, transparent 55%); }
+
+/* ── COME AGISCE ── */
+.agisce { display: grid; grid-template-columns: 1fr 1fr; }
+.agisce__photo { position: relative; overflow: hidden; min-height: 620px; }
+.agisce__photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.agisce__content { background: var(--blue-pale); padding: 4.5rem 4rem; display: flex; flex-direction: column; justify-content: center; }
+.agisce__content h2 { font-size: clamp(1.9rem, 3vw, 2.6rem); font-weight: 700; color: var(--dark); line-height: 1.1; margin-bottom: 2rem; }
+.agisce__content h2 em { font-style: italic; color: var(--blue); }
+.azione { background: #fff; border-left: 3px solid var(--blue); padding: 1.3rem 1.5rem; margin-bottom: 1rem; transition: box-shadow .2s, transform .2s; }
+.azione:hover { box-shadow: 0 6px 24px rgba(65,156,201,0.15); transform: translateX(4px); }
+.azione__num { font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--blue); font-weight: 700; margin-bottom: 0.35rem; }
+.azione h3 { font-size: 0.92rem; font-weight: 600; color: var(--dark); margin-bottom: 0.4rem; font-family: 'DM Sans', sans-serif; }
+.azione p  { font-size: 0.8rem; color: var(--mid); line-height: 1.65; font-weight: 300; }
+
+/* ── FLOW (quiz + form + payment) ── */
+#flow { background: var(--dark); padding: 5rem 2rem; }
+#flow .inner { max-width: 720px; margin: 0 auto; }
+.progress-bar  { height: 2px; background: rgba(255,255,255,0.08); margin-bottom: 2.8rem; overflow: hidden; border-radius: 2px; }
+.progress-fill { height: 100%; background: var(--blue); transition: width .45s ease; }
+.step-indicator { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--blue-light); margin-bottom: 0.5rem; display: block; }
+.quiz-q { font-family: 'Playfair Display', serif; font-size: clamp(1.25rem, 3vw, 1.75rem); font-weight: 400; color: #fff; margin-bottom: 1.8rem; line-height: 1.35; }
+.options { display: grid; gap: 0.7rem; margin-bottom: 2rem; }
+.opt { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.3rem; border: 1px solid rgba(65,156,201,0.2); background: rgba(65,156,201,0.04); cursor: pointer; font-size: 0.95rem; color: rgba(255,255,255,0.92); font-weight: 400; transition: border-color .2s, background .2s; }
+.opt:hover { border-color: var(--blue); background: rgba(65,156,201,0.1); }
+.opt.selected { border-color: var(--blue); background: rgba(65,156,201,0.16); color: #fff; }
+.opt__marker { width: 24px; height: 24px; border: 1px solid rgba(65,156,201,0.4); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.65rem; color: var(--blue-light); font-weight: 600; transition: all .2s; }
+.opt.selected .opt__marker { background: var(--blue); border-color: var(--blue); color: #fff; }
+.opt__txt { flex: 1; line-height: 1.45; }
+.opt__txt strong { color: #fff; font-weight: 600; }
+.btn-row { display: flex; gap: 0.8rem; align-items: center; flex-wrap: wrap; }
+.btn--back { background: transparent; border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.45); padding: 0.88rem 1.8rem; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all .2s; }
+.btn--back:hover { border-color: rgba(255,255,255,0.35); color: rgba(255,255,255,0.8); }
+.btn--next { background: var(--blue); color: #fff; padding: 0.88rem 2.5rem; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; font-weight: 500; transition: background .2s; }
+.btn--next:hover { background: var(--accent); }
+
+/* BLOCKED */
+.block-msg { background: rgba(65,156,201,0.06); border: 1px solid rgba(65,156,201,0.18); padding: 2.5rem 2rem; text-align: center; }
+.block-msg__icon { font-size: 2.5rem; margin-bottom: 1rem; }
+.block-msg h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #fff; margin-bottom: 0.8rem; }
+.block-msg p  { font-size: 0.95rem; color: rgba(255,255,255,0.90); line-height: 1.75; font-weight: 300; }
+
+/* SLOTS */
+.slots-label { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.80); margin-bottom: 0.9rem; margin-top: 1.5rem; font-weight: 500; display: block; }
+.slots-grid  { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px,1fr)); gap: 0.6rem; margin-bottom: 1.5rem; }
+.slot { padding: 0.75rem 1rem; border: 1px solid rgba(65,156,201,0.2); font-size: 0.82rem; cursor: pointer; color: rgba(255,255,255,0.72); background: rgba(255,255,255,0.03); transition: all .2s; text-align: center; line-height: 1.3; }
+.slot:hover:not(.slot--taken):not(.slot--blocked) { border-color: var(--blue); color: #fff; background: rgba(65,156,201,0.1); }
+.slot.selected { border-color: var(--blue); background: var(--blue); color: #fff; }
+.slot--taken   { opacity: 0.32; cursor: not-allowed; text-decoration: line-through; }
+.slot--blocked { opacity: 0.2; cursor: not-allowed; }
+.slot__badge   { font-size: 0.58rem; display: block; margin-top: 2px; opacity: 0.75; }
+
+/* SUMMARY */
+.summary { background: rgba(65,156,201,0.07); border: 1px solid rgba(65,156,201,0.18); padding: 1.3rem 1.6rem; margin-bottom: 1.5rem; }
+.summary__row  { display: flex; justify-content: space-between; align-items: baseline; padding: 0.28rem 0; font-size: 0.9rem; color: rgba(255,255,255,0.88); }
+.summary__row strong { color: #fff; }
+.summary__total { border-top: 1px solid rgba(65,156,201,0.18); margin-top: 0.5rem; padding-top: 0.5rem; }
+.summary__total .summary__row { font-size: 1.05rem; }
+.summary__total strong { color: var(--blue); font-size: 1.2rem; }
+
+/* STRIPE */
+#stripe-el-wrap { background: rgba(255,255,255,0.04); border: 1px solid rgba(65,156,201,0.2); padding: 1.2rem; margin-bottom: 0.5rem; }
+#card-errors { color: #ff6b6b; font-size: 0.8rem; margin: 0.5rem 0 1rem; min-height: 1.1rem; }
+.pay-btn { width: 100%; background: var(--blue); color: #fff; padding: 1.18rem; font-size: 0.85rem; letter-spacing: 0.18em; text-transform: uppercase; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 0.6rem; transition: background .2s; }
+.pay-btn:hover:not(:disabled) { background: var(--accent); }
+.pay-btn:disabled { opacity: 0.52; cursor: not-allowed; }
+.pay-spinner { width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.28); border-top-color: #fff; border-radius: 50%; animation: spin .7s linear infinite; display: none; }
+.pay-btn.loading .pay-spinner { display: block; }
+.pay-btn.loading .pay-label { display: none; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.pay-note { font-size: 0.78rem; color: rgba(255,255,255,0.70); text-align: center; margin-top: 0.8rem; }
+
+/* TESTIMONIALS */
+.testi { background: var(--blue-pale); padding: 5rem 2rem; }
+.testi__inner  { max-width: 920px; margin: 0 auto; }
+.testi__header { text-align: center; margin-bottom: 3rem; }
+.testi__header h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 700; color: var(--dark); }
+.testi__header h2 em { font-style: italic; color: var(--blue); }
+.testi__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.testi__card { background: #fff; padding: 2.2rem 2rem 1.8rem; border-bottom: 3px solid var(--blue); position: relative; }
+.testi__card::before { content: '\201C'; font-family: 'Playfair Display', serif; font-size: 5rem; color: var(--blue-light); line-height: 1; position: absolute; top: -0.6rem; left: 1.4rem; opacity: 0.55; }
+.testi__card p    { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-style: italic; color: var(--dark); line-height: 1.68; margin-bottom: 1.2rem; margin-top: 1.5rem; }
+.testi__card cite { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--blue); font-style: normal; font-weight: 600; }
+
+/* CTA BANNER */
+.cta-banner { position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; min-height: 420px; text-align: center; padding: 5rem 2rem; }
+.cta-banner__img     { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+.cta-banner__overlay { position: absolute; inset: 0; background: rgba(10,18,28,0.80); }
+.cta-banner__content { position: relative; z-index: 2; max-width: 580px; }
+.cta-banner__content h2 { font-size: clamp(1.9rem, 4vw, 3.2rem); color: #fff; font-weight: 700; margin-bottom: 1rem; }
+.cta-banner__content h2 em { font-style: italic; color: var(--blue-light); }
+.cta-banner__content p  { color: rgba(255,255,255,0.90); font-size: 1.05rem; margin-bottom: 2.2rem; font-weight: 300; line-height: 1.75; }
+
+/* SUCCESS */
+.success-page { min-height: 100vh; background: var(--dark); display: none; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 4rem 2rem; }
+.success-page__img     { width: 100%; max-width: 480px; height: 280px; object-fit: cover; margin-bottom: 2.5rem; }
+.success-page__check   { width: 80px; height: 80px; border-radius: 50%; background: var(--blue); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem; color: #fff; }
+.success-page h2       { font-size: clamp(2rem,5vw,3rem); color: #fff; font-weight: 700; margin-bottom: 1rem; }
+.success-page h2 em    { font-style: italic; color: var(--blue-light); }
+.success-page > p      { color: rgba(255,255,255,0.88); font-size: 1rem; line-height: 1.85; max-width: 480px; font-weight: 300; margin: 0 auto; }
+.success-page__details { margin-top: 2rem; background: rgba(65,156,201,0.07); border: 1px solid rgba(65,156,201,0.18); padding: 1.3rem 2rem; font-size: 0.85rem; color: rgba(255,255,255,0.88); text-align: left; max-width: 400px; width: 100%; display: flex; flex-direction: column; gap: 0.5rem; }
+.success-page__details strong { color: #fff; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .intro   { grid-template-columns: 1fr; }
+  .intro__img { min-height: 300px; }
+  .agisce  { grid-template-columns: 1fr; }
+  .agisce__photo { min-height: 300px; aspect-ratio: 1 / 1; }
+  .testi__grid { grid-template-columns: 1fr; }
+}
+
+
+/* ── FLOW TITLE ── */
+#flow h2.flow-title { color: #ffffff; }
+#flow h2.flow-title em { color: var(--blue-light); }
+
+/* ── MOBILE ── */
+/* ── EVIDENZIAZIONE PASSAGGI CHIAVE ── */
+.quiz-q {
+  border-left: 3px solid var(--blue);
+  padding-left: 1rem;
+}
+.step-indicator {
+  background: rgba(65,156,201,0.12);
+  display: inline-block;
+  padding: 0.25rem 0.8rem;
+  border-radius: 0;
+}
+/* Sottolineatura blu sui titoli delle domande nel summary */
+.summary__total {
+  background: rgba(65,156,201,0.08);
+  padding: 0.6rem 0.8rem;
+  border-left: 3px solid var(--blue);
+  margin-left: -0.8rem;
+  margin-right: -0.8rem;
+  padding-left: 0.8rem;
+}
+/* Opt: testo più leggibile al hover */
+.opt:hover { border-color: var(--blue); background: rgba(65,156,201,0.12); color: #fff; }
+/* Label form più visibili */
+.field label { color: rgba(255,255,255,0.75) !important; font-size: 0.68rem; }
+/* Privacy row testo più chiaro */
+.privacy-row span { color: rgba(255,255,255,0.72); font-size: 0.85rem; }
+
+/* ── STRONG SU SFONDI SCURI ── */
+#flow strong, .block-msg strong { color: #ffffff; }
+.intro__text strong { color: #ffffff; }
+.intro__bullets li strong { color: var(--blue-light); letter-spacing: 0.01em; }
+.hero__sub strong { color: #ffffff; }
+.cta-banner__content p strong { color: #ffffff; }
+/* Strong nelle card testimonial */
+.testi__card p strong { color: var(--dark); font-style: normal; }
+/* Stile strong nei blocchi azione */
+.azione p strong { color: var(--dark); }
+
+@media (max-width: 768px) {
+  .hero__content   { padding: 5rem 1.8rem 3rem; }
+  .hero__ctas      { flex-direction: column; }
+  .hero__badges    { display: none !important; }
+  .strip           { display: none !important; }
+  .hero__title     { font-size: clamp(3rem, 13vw, 4.5rem); white-space: nowrap; }
+  .intro__text     { padding: 3.5rem 2rem; }
+  .agisce__content { padding: 3rem 2rem; }
+}
+
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NWW43PZP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- ══════════════ LANDING ══════════════ -->
+<div id="page-landing">
+
+  <nav class="nav">
+    <a href="index.html" class="nav__logo"><img src="assets/logo.png" alt="Ricciardi Studio Dentistico" class="nav-logo"></a>
+    <a href="#flow" class="btn btn--primary btn--sm" onclick="trackEvent('ClickPrenotazione')">Prenota ora</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img class="hero__img" src="assets/hero.jpg" fetchpriority="high" alt="Paziente sorridente che indossa un allineatore trasparente">
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <span class="hero__tag">Total Smile Day · <span id="date-tag"></span></span>
+      <h1 class="hero__title">Total <em>Smile</em></h1>
+      <p class="hero__sub"><strong>Denti allineati senza apparecchio fisso.</strong><br>Allineatori trasparenti su misura: <strong>quasi invisibili, rimovibili e confortevoli</strong>.</p>
+      <p class="hero__date"><span id="date-hero"></span> · Palagiano</p>
+      <div class="hero__ctas">
+        <a href="#flow" class="btn btn--primary" onclick="trackEvent('ClickPrenotazione')">Paga l'acconto per fissare l'appuntamento</a>
+      </div>
+      <div class="hero__badges">
+        <div class="hero__badge">Senza attacchi metallici</div>
+        <div class="hero__badge">Scansione 3D senza impronte</div>
+        <div class="hero__badge">Piano su misura</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP -->
+  <div class="strip">
+    <span class="strip__item">Quasi invisibili</span><span class="strip__dot"></span>
+    <span class="strip__item">Rimovibili</span><span class="strip__dot"></span>
+    <span class="strip__item">Scansione 3D</span><span class="strip__dot"></span>
+    <span class="strip__item">Posti limitati</span><span class="strip__dot"></span>
+    <span class="strip__item">Solo <span id="date-strip"></span></span>
+  </div>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <div class="intro__text">
+      <span class="label label--light">Perché Total Smile</span>
+      <h2>Il sorriso che<br><em>hai sempre voluto</em><br>senza farlo notare</h2>
+      <p>Denti storti, accavallati o con spazi possono pesare sul sorriso e rendere più difficile l'igiene quotidiana. <strong>Total Smile</strong> è il percorso con <strong>allineatori trasparenti</strong> che sposta i denti in modo graduale e controllato, in <strong>3 fasi</strong> seguite dal nostro studio.</p>
+      <p>In questa <strong>giornata speciale</strong> facciamo la scansione e valutiamo il tuo caso, con condizioni <strong>riservate</strong> solo a chi partecipa.</p>
+      <ul class="intro__bullets">
+        <li><strong>Quasi invisibili</strong> — nessun attacco metallico in vista</li>
+        <li><strong>Rimovibili</strong> — li togli per mangiare e lavare i denti</li>
+        <li><strong>Confortevoli</strong> — niente fili né attacchi che irritano</li>
+        <li><strong>Prevedibili</strong> — vedi in anteprima il sorriso finale</li>
+      </ul>
+    </div>
+    <div class="intro__img">
+      <img src="assets/foto-trattamento.jpg" loading="lazy" alt="Allineatore trasparente su misura">
+      <div class="intro__img-overlay"></div>
+    </div>
+  </section>
+
+  <!-- COME AGISCE -->
+  <section class="agisce" id="come-agisce">
+    <div class="agisce__photo">
+      <img src="assets/foto-agisce.jpg" loading="lazy" alt="Prima e dopo: sorriso di un paziente dello Studio Ricciardi">
+    </div>
+    <div class="agisce__content">
+      <span class="label">Come funziona Total Smile</span>
+      <h2>3 fasi su misura,<br><em>un solo sorriso</em></h2>
+      <div class="azione">
+        <div class="azione__num">Fase 01 · Scansione 3D</div>
+        <h3>Cosa facciamo:</h3>
+        <p><strong>Scansione digitale</strong> · <strong>Niente impronte in pasta</strong> · Foto del sorriso · Valutazione del morso</p>
+      </div>
+      <div class="azione">
+        <div class="azione__num">Fase 02 · Piano di trattamento</div>
+        <h3>Cosa facciamo:</h3>
+        <p><strong>Simulazione del risultato</strong> · <strong>Durata stimata</strong> · Numero di allineatori · Costi chiari fin dall'inizio</p>
+      </div>
+      <div class="azione">
+        <div class="azione__num">Fase 03 · Allineatori e controlli</div>
+        <h3>Cosa facciamo:</h3>
+        <p><strong>Allineatori su misura</strong> · <strong>Controlli periodici in studio</strong> · Cambio progressivo delle mascherine · Contenzione finale</p>
+      </div>
+    </div>
+  </section>
+
+
+  <div style="height:3px;background:linear-gradient(to right,var(--blue-light),var(--blue),var(--blue-light))"></div>
+
+  <!-- SEZIONE INFO PRENOTAZIONE -->
+  <section id="info-prenotazione" style="background:#f0f8fd;padding:4rem 2rem">
+    <div style="max-width:900px;margin:0 auto">
+      <span style="font-size:0.63rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--blue);margin-bottom:0.8rem;display:block;font-weight:500">Cosa include</span>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;color:var(--dark);margin-bottom:2.5rem;line-height:1.1">Fissa il tuo appuntamento al<br><em style="font-style:italic;color:var(--blue)">Total Smile Day</em></h2>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start">
+
+        <!-- Testo -->
+        <div>
+          <p style="font-size:0.95rem;color:var(--mid);line-height:1.85;font-weight:300;margin-bottom:1rem">
+            Per il Total Smile Day, puoi prenotare un appuntamento individuale di <strong style="color:var(--dark);font-size:1.05rem">1 ora</strong> presso il nostro Studio a Palagiano.
+          </p>
+          <p style="font-size:0.95rem;color:var(--mid);line-height:1.85;font-weight:300;margin-bottom:1rem">
+            Non si tratta di una semplice visita: durante l'appuntamento farai la <strong style="color:var(--dark);text-decoration:underline;text-underline-offset:3px">scansione digitale 3D dei denti</strong> e riceverai una <strong style="color:var(--dark)">valutazione ortodontica approfondita</strong>, con un'analisi personalizzata del tuo sorriso e del tuo morso e degli obiettivi che desideri raggiungere.
+          </p>
+          <p style="font-size:0.95rem;color:var(--mid);line-height:1.85;font-weight:300">
+            In questo modo <strong style="color:var(--dark)">blocchi il tuo posto</strong>, scopri se gli allineatori sono adatti al tuo caso e ricevi un'<strong style="color:var(--dark)">indicazione chiara e personalizzata</strong> su durata e costi del percorso.
+          </p>
+        </div>
+
+        <!-- Card prezzo -->
+        <div style="background:var(--dark);padding:2rem;display:flex;flex-direction:column;gap:1.2rem">
+          <p style="font-size:0.63rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--blue-light);font-weight:500">Blocca il tuo posto</p>
+          <p style="font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:700;color:var(--blue);line-height:1">€ 20</p>
+          <p style="font-size:0.88rem;color:rgba(255,255,255,0.75);margin-top:-0.3rem">acconto · visita totale <strong style="color:#fff">€ 87</strong></p>
+          <p style="font-size:0.9rem;color:rgba(255,255,255,0.88);line-height:1.7;font-weight:300">
+            Acconto di <strong style="color:#fff;font-size:1rem">€ 20</strong> tramite <strong style="color:#fff">Stripe</strong>. Il saldo di <strong style="color:#fff">€ 67</strong> verrà pagato il giorno dell'appuntamento.
+          </p>
+          <div style="height:1px;background:rgba(65,156,201,0.2)"></div>
+          <div style="display:flex;flex-direction:column;gap:0.6rem">
+            <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.9rem;color:#ffffff">
+              <span style="color:var(--blue-light)">✓</span> <strong>Acconto € 20</strong> · saldo € 67 in studio
+            </div>
+            <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.9rem;color:#ffffff">
+              <span style="color:var(--blue-light)">✓</span> <strong>Scansione 3D</strong> e analisi del sorriso
+            </div>
+            <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.9rem;color:#ffffff">
+              <span style="color:var(--blue-light)">✓</span> <strong>Posto garantito</strong>
+            </div>
+          </div>
+          <a href="#flow" class="btn btn--primary" style="text-align:center;margin-top:0.5rem" onclick="trackEvent('ClickPrenotazione')">Paga l'acconto</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Mobile: una colonna -->
+  <style>
+    @media(max-width:768px){
+      #info-prenotazione > div > div[style*="grid-template-columns"]{
+        grid-template-columns:1fr !important;
+      }
+    }
+  </style>
+
+  <div style="height:3px;background:linear-gradient(to right,var(--blue-light),var(--blue),var(--blue-light))"></div>
+
+  <!-- FLOW: dati + pagamento acconto -->
+  <section id="flow">
+    <div class="inner">
+      <span class="label label--light">Prenota il tuo Total Smile</span>
+      <h2 class="flow-title">Fissa il tuo<br><em>appuntamento</em></h2>
+      <p class="sub" style="font-size:1rem;color:rgba(255,255,255,0.85);margin-bottom:2.5rem;font-weight:400">Paga l'acconto di <strong style="color:#fff">€ 20</strong> e il tuo posto è bloccato: <strong style="color:var(--blue-light)">posti limitati</strong>.</p>
+
+      <div id="step-form">
+        <div class="field mb-1">
+          <label>Data appuntamento</label>
+          <input type="text" id="event-day-disp" readonly style="color:rgba(255,255,255,0.6);cursor:default">
+        </div>
+        <div class="grid-2 mb-1">
+          <div class="field"><label>Nome *</label><input type="text" id="f-nome" placeholder="Maria" autocomplete="given-name"></div>
+          <div class="field"><label>Cognome *</label><input type="text" id="f-cognome" placeholder="Rossi" autocomplete="family-name"></div>
+        </div>
+        <div class="field mb-1"><label>Email *</label><input type="email" id="f-email" placeholder="maria@email.it" autocomplete="email"></div>
+        <div class="field mb-2"><label>Telefono *</label><input type="tel" id="f-tel" placeholder="+39 333 000 0000" autocomplete="tel"></div>
+        <label class="privacy-row mb-2">
+          <input type="checkbox" id="f-privacy">
+          <span>Ho letto e accetto la <a href="https://luminaricciardi.it/privacy-policy/" target="_blank">Privacy Policy</a>. Acconsento al trattamento dei miei dati personali per la gestione della prenotazione. *</span>
+        </label>
+        <div id="form-err" class="err hidden"></div>
+        <button class="pay-btn" id="pay-btn" onclick="handlePay()">
+          <div class="pay-spinner"></div>
+          <span class="pay-label">💳 &nbsp;Paga l'acconto di € 20</span>
+        </button>
+        <p class="pay-note">Saldo di € 67 il giorno dell'appuntamento · Pagamento sicuro gestito da Stripe</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testi">
+    <div class="testi__inner">
+      <div class="testi__header">
+        <span class="label">Cosa dicono degli allineatori</span>
+        <h2>Le <em>esperienze</em> reali<br>dei nostri pazienti</h2>
+      </div>
+      <div class="testi__grid">
+        <div class="testi__card">
+          <!-- DA SOSTITUIRE con una recensione reale di un paziente (con il suo consenso) -->
+          <p>"[Testo recensione reale] … adesso sorrido <strong>senza pensarci</strong>."</p>
+          <cite>[Nome], [età] anni</cite>
+        </div>
+        <div class="testi__card">
+          <!-- DA SOSTITUIRE con una recensione reale di un paziente (con il suo consenso) -->
+          <p>"[Testo recensione reale] … nessuno si accorgeva che li <strong>indossavo</strong>."</p>
+          <cite>[Nome], [età] anni</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner" style="background:var(--dark)">
+    <div class="cta-banner__overlay"></div>
+    <div class="cta-banner__content">
+      <h2>Posti limitati.<br><em>Prenota ora.</em></h2>
+      <p>Solo per il <strong>Total Smile Day</strong> presso Ricciardi Studio Dentistico a Palagiano. Gli appuntamenti sono <strong style="text-decoration:underline;text-underline-offset:3px">individuali e disponibili fino a esaurimento posti</strong>.</p>
+      <a href="#flow" class="btn btn--primary" onclick="trackEvent('ClickPrenotazione')">Prenota il tuo Total Smile</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <img src="assets/logo.png" loading="lazy" alt="Ricciardi Studio Dentistico Lumina" style="height:100px;width:auto;margin:0 auto 1.5rem;display:block">
+    <p style="color:#419cc9;font-size:0.9rem;font-weight:500;margin-bottom:0.4rem">Palagiano, Via Imbriani, 40</p>
+    <p style="color:#419cc9;font-size:0.9rem;font-weight:500;margin-bottom:1.5rem">099 888 4995</p>
+    <div class="footer__divider"></div>
+    <p><a href="https://luminaricciardi.it/privacy-policy/" target="_blank">Privacy Policy</a> &nbsp;·&nbsp; <a href="/admin/login">Accesso staff</a></p>
+  </footer>
+
+</div><!-- /page-landing -->
+
+
+
+<script type="module" id="app-module">
+/* ═══════════════════════════════════════════════
+   storage.js — Firebase Firestore + fallback localStorage
+   Ricciardi Studio Dentistico · Total Smile
+═══════════════════════════════════════════════ */
+
+// ── FIREBASE CONFIG ──────────────────────────
+const firebaseConfig = {
+  apiKey:            "AIzaSyCVC6fHbo8OHevILIkI9j_XDyP4GoWCHAQ",
+  authDomain:        "landing-total-stripe.firebaseapp.com",
+  projectId:         "landing-total-stripe",
+  storageBucket:     "landing-total-stripe.firebasestorage.app",
+  messagingSenderId: "528151902496",
+  appId:             "1:528151902496:web:9da1394fe42a30a36dff45"
+};
+
+// ── FIREBASE INIT ────────────────────────────
+import { initializeApp }                          from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getFirestore, collection, doc,
+         getDocs, getDoc, setDoc, addDoc,
+         updateDoc, deleteDoc, onSnapshot,
+         query, orderBy }                         from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+const _app = initializeApp(firebaseConfig);
+const db   = getFirestore(_app);
+
+// ── COLLEZIONI FIRESTORE ─────────────────────
+// /bookings/{id}   → prenotazioni
+// /config/main     → cfg (pixelId, stripePk, stripeAmount, stripeDesc, adminPw, eventDay)
+// /slots/{id}      → slot orari
+
+// ── DEFAULT SLOTS ────────────────────────────
+const DEFAULT_SLOTS = [
+  { id: 's1', start: '09:00', end: '10:00', blocked: false },
+  { id: 's2', start: '10:00', end: '11:00', blocked: false },
+  { id: 's3', start: '11:00', end: '12:00', blocked: false },
+  { id: 's4', start: '12:00', end: '13:00', blocked: false },
+  { id: 's5', start: '14:00', end: '15:00', blocked: false },
+  { id: 's6', start: '15:00', end: '16:00', blocked: false },
+  { id: 's7', start: '16:00', end: '17:00', blocked: false },
+  { id: 's8', start: '17:00', end: '18:00', blocked: false },
+];
+
+// ── CAMPAGNA ─────────────────────────────────
+// Stesso database di Total Lift: ogni prenotazione porta "campagna",
+// e le impostazioni (data evento, pixel, prezzo) stanno in /config/allineatori.
+const CAMPAGNA = 'allineatori';
+const CFG_DOC  = 'allineatori';
+
+// Link di pagamento Stripe del prodotto "Acconto Allineatori".
+// DA SOSTITUIRE con il link nuovo: questo è ancora quello di Total Lift.
+const STRIPE_LINK = 'https://buy.stripe.com/aFa6oGcG16ro3Ss08faVa02';
+
+// ── TL OBJECT ────────────────────────────────
+const TL = {
+
+  /* CONFIG */
+  _cfg: {},
+  async loadCfg() {
+    const local = JSON.parse(localStorage.getItem('tl_cfg') || '{}');
+    TL._cfg = local;
+    try {
+      const snap = await getDoc(doc(db, 'config', CFG_DOC));
+      if (snap.exists()) {
+        TL._cfg = { ...local, ...snap.data() };  // Firestore vince su localStorage
+      }
+    } catch(e) {
+      console.warn('Firestore loadCfg fallback:', e.message);
+    }
+    return TL._cfg;
+  },
+  cfg() { return TL._cfg; },
+  async saveCfg(data) {
+    TL._cfg = { ...TL._cfg, ...data };
+    localStorage.setItem('tl_cfg', JSON.stringify(TL._cfg));
+    try {
+      await setDoc(doc(db, 'config', CFG_DOC), TL._cfg, { merge: true });
+    } catch(e) {
+      console.warn('Firestore saveCfg fallback:', e.message);
+    }
+  },
+
+  /* PRENOTAZIONI */
+  async getBookings() {
+    try {
+      const snap = await getDocs(query(collection(db, 'bookings'), orderBy('createdAt', 'desc')));
+      return snap.docs.map(d => ({ id: d.id, ...d.data() }));
+    } catch(e) {
+      return JSON.parse(localStorage.getItem('tl_bookings') || '[]');
+    }
+  },
+  async addBooking(b) {
+    try {
+      const ref = await addDoc(collection(db, 'bookings'), b);
+      return ref.id;
+    } catch(e) {
+      const bks = JSON.parse(localStorage.getItem('tl_bookings') || '[]');
+      bks.push(b);
+      localStorage.setItem('tl_bookings', JSON.stringify(bks));
+      return b.id;
+    }
+  },
+  async updateBooking(id, data) {
+    try {
+      await updateDoc(doc(db, 'bookings', id), data);
+    } catch(e) {
+      const bks = JSON.parse(localStorage.getItem('tl_bookings') || '[]');
+      const i = bks.findIndex(b => b.id === id);
+      if (i > -1) { bks[i] = { ...bks[i], ...data }; localStorage.setItem('tl_bookings', JSON.stringify(bks)); }
+    }
+  },
+  async deleteBooking(id) {
+    try {
+      await deleteDoc(doc(db, 'bookings', id));
+    } catch(e) {
+      const bks = JSON.parse(localStorage.getItem('tl_bookings') || '[]').filter(b => b.id !== id);
+      localStorage.setItem('tl_bookings', JSON.stringify(bks));
+    }
+  },
+
+  /* SLOTS */
+  async getSlots() {
+    try {
+      const snap = await getDocs(collection(db, 'slots'));
+      if (snap.empty) {
+        await TL.initDefaultSlots();
+        return DEFAULT_SLOTS;
+      }
+      return snap.docs.map(d => ({ id: d.id, ...d.data() }))
+                      .sort((a,b) => a.start.localeCompare(b.start));
+    } catch(e) {
+      return JSON.parse(localStorage.getItem('tl_slots') || JSON.stringify(DEFAULT_SLOTS));
+    }
+  },
+  async initDefaultSlots() {
+    for (const s of DEFAULT_SLOTS) {
+      await setDoc(doc(db, 'slots', s.id), { start: s.start, end: s.end, blocked: s.blocked });
+    }
+  },
+  async saveSlot(id, data) {
+    try {
+      await setDoc(doc(db, 'slots', id), data, { merge: true });
+    } catch(e) {
+      const slots = JSON.parse(localStorage.getItem('tl_slots') || JSON.stringify(DEFAULT_SLOTS));
+      const i = slots.findIndex(s => s.id === id);
+      if (i > -1) slots[i] = { ...slots[i], ...data };
+      localStorage.setItem('tl_slots', JSON.stringify(slots));
+    }
+  },
+  async addSlot(slot) {
+    try {
+      await setDoc(doc(db, 'slots', slot.id), { start: slot.start, end: slot.end, blocked: false });
+    } catch(e) {
+      const slots = JSON.parse(localStorage.getItem('tl_slots') || JSON.stringify(DEFAULT_SLOTS));
+      slots.push(slot);
+      localStorage.setItem('tl_slots', JSON.stringify(slots));
+    }
+  },
+  async deleteSlot(id) {
+    try {
+      await deleteDoc(doc(db, 'slots', id));
+    } catch(e) {
+      const slots = JSON.parse(localStorage.getItem('tl_slots') || JSON.stringify(DEFAULT_SLOTS)).filter(s => s.id !== id);
+      localStorage.setItem('tl_slots', JSON.stringify(slots));
+    }
+  },
+
+  /* EVENTO */
+  eventDay() { return TL._cfg.eventDay || localStorage.getItem('tl_eventDay') || '2025-05-27'; },
+
+  /* REAL-TIME LISTENER prenotazioni (per dashboard) */
+  onBookingsChange(callback) {
+    try {
+      return onSnapshot(
+        query(collection(db, 'bookings'), orderBy('createdAt', 'desc')),
+        snap => callback(snap.docs.map(d => ({ id: d.id, ...d.data() })))
+      );
+    } catch(e) {
+      return () => {};
+    }
+  }
+};
+
+
+/* ═══════════════════════════════════════════════
+   pixel.js — Meta Pixel tracking
+   Ricciardi Studio Dentistico · Total Smile
+
+   Eventi tracciati:
+   - PageView
+   - ClickPrenotazione
+   - QuestionarioCompletato
+   - Lead
+   - SlotSelected
+   - InitiateCheckout
+   - Purchase
+═══════════════════════════════════════════════ */
+
+function initPixel() {
+  const pid = TL.cfg().pixelId;
+  if (!pid) { console.warn('Meta Pixel: nessun ID configurato'); return; }
+
+  // Inizializza fbq subito (accoda gli eventi prima che l'SDK carichi)
+  if (!window.fbq) {
+    window.fbq = function() {
+      window.fbq.callMethod
+        ? window.fbq.callMethod.apply(window.fbq, arguments)
+        : window.fbq.queue.push(arguments);
+    };
+    window._fbq = window.fbq;
+    window.fbq.push = window.fbq;
+    window.fbq.loaded = true;
+    window.fbq.version = '2.0';
+    window.fbq.queue = [];
+  }
+
+  fbq('init', pid);
+  fbq('track', 'PageView');
+
+  // Carica lo script SDK
+  if (!document.getElementById('fb-pixel-sdk')) {
+    const s = document.createElement('script');
+    s.id = 'fb-pixel-sdk';
+    s.async = true;
+    s.src = 'https://connect.facebook.net/en_US/fbevents.js';
+    document.head.appendChild(s);
+  }
+
+  console.log('Meta Pixel inizializzato con ID:', pid);
+}
+
+// Eventi standard Meta Pixel
+const META_STANDARD_EVENTS = ['PageView','Purchase','Lead','InitiateCheckout',
+  'AddToCart','ViewContent','Search','Subscribe','Contact','FindLocation'];
+
+function trackEvent(name, params = {}) {
+  // 1. Push su dataLayer (GTM intercetta tutto)
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event: name, ...params });
+
+  // 2. fbq: standard o custom
+  if (typeof fbq === 'function') {
+    if (META_STANDARD_EVENTS.includes(name)) {
+      fbq('track', name, params);
+    } else {
+      fbq('trackCustom', name, params);
+    }
+  }
+
+  console.log('[GTM/Pixel] event:', name, params);
+}
+
+
+/* ═══════════════════════════════════════════════
+   landing.js — Quiz, form, slot, Stripe, successo
+   Ricciardi Studio Dentistico · Total Smile
+═══════════════════════════════════════════════ */
+
+/* ── UTILITY ── */
+function formatDay(dateStr) {
+  if (!dateStr) return '';
+  return new Date(dateStr + 'T12:00:00').toLocaleDateString('it-IT', {
+    weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
+  });
+}
+
+/* ── VALIDAZIONE FORM ── */
+function validateForm() {
+  const nome    = document.getElementById('f-nome').value.trim();
+  const cognome = document.getElementById('f-cognome').value.trim();
+  const email   = document.getElementById('f-email').value.trim();
+  const tel     = document.getElementById('f-tel').value.trim();
+  const priv    = document.getElementById('f-privacy').checked;
+  const err     = document.getElementById('form-err');
+  if (!nome || !cognome || !email || !tel) {
+    err.textContent = 'Compila tutti i campi obbligatori.';
+    err.classList.remove('hidden'); return false;
+  }
+  if (!priv) {
+    err.textContent = 'Devi accettare la Privacy Policy per procedere.';
+    err.classList.remove('hidden'); return false;
+  }
+  err.classList.add('hidden');
+  return true;
+}
+
+/* ── SALVA LEAD (prima del pagamento) ── */
+let _leadId = null;
+
+async function saveLead() {
+  if (_leadId) return; // già salvato
+  const lead = {
+    nome:      document.getElementById('f-nome').value.trim(),
+    cognome:   document.getElementById('f-cognome').value.trim(),
+    email:     document.getElementById('f-email').value.trim(),
+    tel:       document.getElementById('f-tel').value.trim(),
+    data:      TL.eventDay(),
+    ora:       '',
+    payment:   'pending',
+    amount:    0,
+    paymentRef: '',
+    promemoria: 'no',
+    campagna:  CAMPAGNA,
+    leadOnly:  true, // flag: ha lasciato i dati ma non ha pagato
+    createdAt: new Date().toISOString()
+  };
+  _leadId = await TL.addBooking(lead);
+  console.log('[Lead salvato]', _leadId);
+}
+
+/* ── PAGAMENTO (Stripe Payment Link) ── */
+async function handlePay() {
+  if (!validateForm()) return;
+  const btn = document.getElementById('pay-btn');
+  btn.classList.add('loading'); btn.disabled = true;
+  trackEvent('Lead');
+  trackEvent('InitiateCheckout');
+
+  // Salva lead prima di reindirizzare
+  await saveLead();
+
+  // Salva anche in localStorage come backup nel caso Stripe non passi i params
+  localStorage.setItem('tl_pending_booking', JSON.stringify({
+    leadId:  _leadId,
+    nome:    document.getElementById('f-nome').value.trim(),
+    cognome: document.getElementById('f-cognome').value.trim(),
+    email:   document.getElementById('f-email').value.trim(),
+    data:    TL.eventDay(),
+    amount:  2000
+  }));
+
+  // Stripe Payment Link: il ritorno a /grazie va impostato nelle opzioni del link su Stripe
+  const stripeParams = new URLSearchParams({
+    prefilled_email: document.getElementById('f-email').value.trim()
+  });
+  if (_leadId) stripeParams.set('client_reference_id', _leadId);
+  const stripeUrl = STRIPE_LINK + '?' + stripeParams.toString();
+
+  window.location.href = stripeUrl;
+}
+
+/* ── SALVA SU FIRESTORE E MOSTRA SUCCESSO ── */
+async function saveAndConfirm(status, amount, ref) {
+  const updateData = {
+    payment:    status,
+    amount,
+    paymentRef: ref || '',
+    leadOnly:   false,
+    paidAt:     new Date().toISOString()
+  };
+
+  let bookingId = _leadId;
+
+  if (_leadId) {
+    // Aggiorna il lead esistente con i dati del pagamento
+    await TL.updateBooking(_leadId, updateData);
+  } else {
+    // Fallback: crea nuovo record
+    const b = {
+      nome:       document.getElementById('f-nome').value.trim(),
+      cognome:    document.getElementById('f-cognome').value.trim(),
+      email:      document.getElementById('f-email').value.trim(),
+      tel:        document.getElementById('f-tel').value.trim(),
+      data:       TL.eventDay(),
+      ora:        '',
+      ...updateData,
+      promemoria: 'no',
+      campagna:   CAMPAGNA,
+      createdAt:  new Date().toISOString()
+    };
+    bookingId = await TL.addBooking(b);
+  }
+
+  trackEvent('Purchase', { value: amount / 100, currency: 'EUR' });
+
+  showSuccess({
+    id:      bookingId,
+    nome:    document.getElementById('f-nome').value.trim(),
+    cognome: document.getElementById('f-cognome').value.trim(),
+    email:   document.getElementById('f-email').value.trim(),
+    data:    TL.eventDay(),
+    ora:     '',
+    amount
+  });
+}
+
+function showSuccess(b) {
+  // Redirect alla pagina /grazie con parametri
+  const params = new URLSearchParams({
+    nome:    b.nome,
+    cognome: b.cognome,
+    data:    b.data,
+    ora:     b.ora,
+    amount:  b.amount || 0
+  });
+  window.location.href = '/grazie?' + params.toString();
+}
+
+
+// ── TRACCIA SEZIONI VISIBILI ──
+function initSectionTracking() {
+  const sections = [
+    { el: document.getElementById('come-agisce'), name: 'ViewComeAgisce' },
+    { el: document.getElementById('flow'),        name: 'ViewModuloPagamento' },
+    { el: document.querySelector('.testi'),        name: 'ViewTestimonianze' },
+    { el: document.querySelector('.cta-banner'),   name: 'ViewCTABanner' },
+  ];
+  const seen = new Set();
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting && !seen.has(e.target)) {
+        seen.add(e.target);
+        const s = sections.find(s => s.el === e.target);
+        if (s) trackEvent(s.name);
+      }
+    });
+  }, { threshold: 0.3 });
+  sections.forEach(s => { if (s.el) obs.observe(s.el); });
+}
+
+/* ── PREZZO ── */
+function updatePrice() {
+  const c = TL.cfg();
+  const price = c.stripeAmount ? '€ ' + (c.stripeAmount / 100).toFixed(0) : '€ 20';
+  const el1 = document.getElementById('info-price');
+  const el2 = document.getElementById('info-price-inline');
+  if (el1) el1.textContent = price;
+  if (el2) el2.textContent = price;
+}
+
+/* ── DATE DINAMICHE ── */
+async function populateDates() {
+  await TL.loadCfg();
+  const day = TL.eventDay();
+  const d   = new Date(day + 'T12:00:00');
+  const short   = d.toLocaleDateString('it-IT', { day: 'numeric', month: 'long' });
+  const full    = d.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long' });
+  const fullCap = full.charAt(0).toUpperCase() + full.slice(1);
+  const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+  set('date-tag',    short);
+  set('date-hero',   fullCap);
+  set('date-strip',  short);
+  set('date-banner', short);
+  const disp = document.getElementById('event-day-disp');
+  if (disp) { const f = formatDay(day); disp.value = f.charAt(0).toUpperCase() + f.slice(1); }
+
+  // Mostra prezzo nel blocco info
+  const c = TL.cfg();
+
+}
+
+
+// Esponi funzioni globali (necessario con type="module")
+window.updatePrice = updatePrice;
+window.handlePay = handlePay;
+window.trackEvent = trackEvent;
+
+/* ── INIT ── */
+document.addEventListener('DOMContentLoaded', async () => {
+  await TL.loadCfg();
+  console.log('[Config da Firestore]', TL.cfg());
+  updatePrice();
+  initPixel();
+  trackEvent('PageView');
+  await populateDates();
+  initSectionTracking();
+
+  // Traccia scroll depth (25%, 50%, 75%, 100%)
+  const scrollMilestones = new Set();
+  window.addEventListener('scroll', () => {
+    const pct = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+    [25, 50, 75, 90].forEach(m => {
+      if (pct >= m && !scrollMilestones.has(m)) {
+        scrollMilestones.add(m);
+        trackEvent('ScrollDepth', { percent: m });
+      }
+    });
+  }, { passive: true });
+
+  // Traccia tempo sulla pagina (30s, 60s, 120s)
+  [30, 60, 120].forEach(sec => {
+    setTimeout(() => trackEvent('TimeOnPage', { seconds: sec }), sec * 1000);
+  });
+});
+
+</script>
+
+</body>
+</html>
